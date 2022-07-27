@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.praktikum_jasper_2072007.Controller.MenuController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="Category" mnemonicParsing="false" onAction="#GoToCategory" text="Show Category Management" />
+                  <MenuItem fx:id="Close" mnemonicParsing="false" onAction="#Closed" text="Close" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Report">
+               <items>
+                  <MenuItem fx:id="SReport" mnemonicParsing="false" onAction="#ShowSReport" text="Simple Report" />
+                  <MenuItem fx:id="GReport" mnemonicParsing="false" onAction="#ShowGReport" text="Group Report" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="375.0" prefWidth="246.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="31.0" prefWidth="246.0">
+               <children>
+                  <Label text="ID">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtID" prefHeight="25.0" prefWidth="170.0">
+                     <HBox.margin>
+                        <Insets left="55.0" top="3.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="246.0">
+               <children>
+                  <Label text="Name">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtName" prefHeight="25.0" prefWidth="171.0">
+                     <HBox.margin>
+                        <Insets left="35.0" top="3.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="246.0">
+               <children>
+                  <Label text="Price">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtPrice" prefHeight="25.0" prefWidth="172.0">
+                     <HBox.margin>
+                        <Insets left="41.0" top="3.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="79.0" prefWidth="246.0">
+               <children>
+                  <Label text="Description">
+                     <HBox.margin>
+                        <Insets top="27.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtDescription" prefHeight="69.0" prefWidth="172.0">
+                     <HBox.margin>
+                        <Insets left="6.0" top="3.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="246.0">
+               <children>
+                  <Label text="Category">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="CombCategory" onMouseClicked="#SelectedCategory" prefHeight="25.0" prefWidth="115.0">
+                     <HBox.margin>
+                        <Insets left="19.0" top="3.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="BtnSave" mnemonicParsing="false" onAction="#SaveData" text="Save">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="BtnReset" mnemonicParsing="false" onAction="#ResetData" text="Reset">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="BtnUpdate" mnemonicParsing="false" onAction="#UpdateData" text="Update">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="BtnDelete" mnemonicParsing="false" onAction="#DeleteData" text="Delete" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <TableView fx:id="TableMenu" onMouseClicked="#SelectedTable" prefHeight="375.0" prefWidth="447.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="ColID" prefWidth="62.0" text="ID" />
+          <TableColumn fx:id="ColNama" prefWidth="101.0" text="Name" />
+            <TableColumn fx:id="ColPrice" prefWidth="89.0" text="Price" />
+            <TableColumn fx:id="ColCategory" prefWidth="101.0" text="Category" />
+        </columns>
+      </TableView>
+   </right>
+</BorderPane>
